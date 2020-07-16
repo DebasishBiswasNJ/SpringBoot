@@ -1,0 +1,11 @@
+insert into USER_TABLE values(10001, sysdate(), 'myLove');
+insert into USER_TABLE values(10002, sysdate(), 'sree');
+insert into USER_TABLE values(10003, sysdate(), 'janu');
+insert into USER_TABLE values(10004, sysdate(), 'sexyBaby');
+insert into USER_TABLE values(10005, sysdate(), 'hottie');
+insert into USER_TABLE values(10006, sysdate(), 'Bal');
+insert into POST_TABLE values(11001, 'MyLove first Post', 10001);
+insert into POST_TABLE values(11002, 'MyLove second Post', 10001);
+insert into POST_TABLE values(11003, 'sree first Post', 10002);
+insert into POST_TABLE values(11004, 'sexyBaby first sexy Post', 10003);
+insert into POST_TABLE values(11005, 'sexyBaby second hot Post', 10003);

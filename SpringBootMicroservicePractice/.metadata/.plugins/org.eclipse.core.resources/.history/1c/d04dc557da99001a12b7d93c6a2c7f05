@@ -1,0 +1,16 @@
+package com.deb.microservices.currencyconversionservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+/**
+ * Provide the name="currency-exchange-service" of currency-exchange-service 
+ * which is configured in the application.properties
+ * i.e. put the name -> the service you want to interact
+ * 
+ * @author ARIES_PC
+ *
+ */
+@FeignClient(name="currency-exchange-service", url="localhost:8000")
+public interface CurrencyExchangeServiceProxy {
+
+}

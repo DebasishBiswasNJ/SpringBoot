@@ -1,0 +1,6 @@
+package com.deb.microservices.currencyconversionservice;
+
+public class CurrencyConversionBean {
+
+	
+}

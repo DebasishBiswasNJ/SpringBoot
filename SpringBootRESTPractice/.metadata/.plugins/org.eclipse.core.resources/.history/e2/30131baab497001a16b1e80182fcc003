@@ -1,0 +1,162 @@
+# Read Me First
+The following was discovered as part of building this project:
+
+* The original package name 'com.deb.rest.webservices.restful-web-services' is invalid and this project uses 'com.deb.rest.webservices.restfulwebservices' instead.
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/maven-plugin/reference/html/#build-image)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/htmlsingle/#using-boot-devtools)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+
+# My NOTES :
+
+## WhiteLabel Error Page
+===========================
+No converter found for return value of type: class com.deb.rest.webservices.restfulwebservices.HelloWorldBean
+
+* If there is no getter method found in HelloWorldBean class. Then, this error comes.
+
+## Http Status Abstract Class
+=============================
+ResponseEntityExceptionHandler Abstract class r modhye Response Structure ta declare kora ache, e.g. -> 
+(je kono rokm exception r jonno ki type status pathabe, seta ei class e decide kora ache)
+SERVICE_UNAVAILABLE, NOT_FOUND
+
+Example of an Response Structure, when a resource is not found :
+---------------------------------------------------------------
+"timestamp": "2020-05-16T11:41:10.749+00:00",
+"status": 404,
+"error": "Not Found",
+"message": "id- 5454",
+"path": "/users/5454"
+
+NOTE ::: amra customized structure er response o pathate pari. tokhon ai abstract class take extend korte hbe.
+e.g. -> public class customizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler
+
+## @ControllerAdvice
+======================
+When we want to share things across different Controllers, then go for @ControllerAdvice annotation. 
+[Specialization of {@link Component @Component} for classes that declare
+ * {@link ExceptionHandler @ExceptionHandler}, {@link InitBinder @InitBinder}, or
+ * {@link ModelAttribute @ModelAttribute} methods to be shared across
+ * multiple {@code @Controller} classes.]
+
+NOTE :: 
+------
+@ExceptionHandler = for Exception Handling
+@InitBinder = for Date declaration
+@ModelAttribute = common Model Attributes
+
+## @ExceptionHandler(Exception.class)
+=============================================================================
+@ExceptionHandler(Exception.class)
+public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request) {	}
+
+NOTE :: 
+------
+jokhn kono exception asbe Exception class er takhon handleAllException() ai method ta ota handle korbe.
+
+
+## static Package import
+===========================
+e.g. : import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
+
+Doing this will give us the priviledge to access the methods of ControllerLinkBuilder methods without using the ControllerLinkBuilder at first,
+like ControllerLinkBuilder.linkTo()
+So, we can directly use linkTo() method in classes, where static import is done
+
+## To create a new class click [ctrl + n]
+## click [ctrl + 1] --> to create a class, constructor directly 
+## click [ctrl + 1] from the top package import --> to move a class to a package.
+
+
+# Internationalization (I18N)
+*****************************
+To make our response international, so that Locale/Country wise our response will be different :
+e.g. ->
+japan : "Ohio" (Good Morning)
+France : "Bonzour" (Good Morning)
+UK/US : "Good Morning"
+
+### Configuration
+=================
+- Locale Resolver
+	- Default Locale - Locale.US
+- ResourceBundleMessageSource
+
+### Usage
+=========
+- Autowire MessageSource
+- @RequestHeader(value = "Accept-Language", required = false) Locale locale
+- messageSource.getMessage("helloWorld.message", null, locale)
+
+
+# How to accept XML ?
+===========================
+Only Add jackson-dataformat-xml dependency in the pom.xml
+
+<dependency>
+	<groupId>com.fasterxml.jackson.dataformat</groupId>
+	<artifactId>jackson-dataformat-xml</artifactId>
+</dependency>
+
+#Monitoring
+==============
+<!-- For monitoring purpose, Actuator dependency is needed -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+<!-- To see the monitoring data in browser 
+HAL : Hypertext Application Language
+how to hyperlink between resources in your API 
+http://localhost:8080/actuator -->
+<dependency>
+	<groupId>org.springframework.data</groupId>
+	<artifactId>spring-data-rest-hal-browser</artifactId>
+</dependency>
+		
+		
+# Swagger
+============
+http://localhost:8080/swagger-ui.html
+http://localhost:8080/v2/api-docs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

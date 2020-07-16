@@ -1,0 +1,5 @@
+spring.application.name=spring-cloud-config-server
+server.port=8888
+
+#spring.devtools.restart.quiet-period=1s
+spring.cloud.config.server.git.uri=file://C:/Users/ARIES_PC/GitConfigMicroservice/git-localconfig-repo

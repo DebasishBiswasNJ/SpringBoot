@@ -1,0 +1,5 @@
+package com.deb.microservices.limitsservice;
+
+public class LimitConfiguration {
+
+}

@@ -1,0 +1,22 @@
+package com.sree.microservices.currencyconversionservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
+/**
+ * Provide the name="currency-exchange-service" of currency-exchange-service 
+ * which is configured in the application.properties
+ * i.e. "name" -> with which service you want to interact
+ * "url" -> is the url of the currency-exchange-service's current instance
+ * 
+ *
+ */
+@FeignClient(name="currency-exchange-service", url="localhost:8000")
+public interface CurrencyExchangeServiceProxy {
+	
+	@GetMapping("/currency-exchange/from/{from}/to/{to}")
+	public CurrencyConversionBean retriveExchangeValue(@PathVariable String from, @PathVariable String to);
+	
+}

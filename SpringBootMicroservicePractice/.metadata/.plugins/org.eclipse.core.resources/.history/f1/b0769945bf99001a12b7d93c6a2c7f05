@@ -1,0 +1,36 @@
+# Read Me First
+The following was discovered as part of building this project:
+
+* The original package name 'com.deb.microservices.currency-exchange-service' is invalid and this project uses 'com.deb.microservices.currencyexchangeservice' instead.
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html/#build-image)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/htmlsingle/#using-boot-devtools)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/htmlsingle/#production-ready)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+
+
+#Dependencies added at the time of creating project -->Web, DevTools, Actuator, Config Client, 2.3.0 Springboot version
+---------------------------------------------------------------------------------------------
+
+#@ConfigurationProperties("currency-exchange-service")
+======================================================
+NOTE :: Read the application.properties file's values where it starts with 'limits-service'
+e.g limits-service.minimum=99  and  limits-service.maximum=9999
+
+
+

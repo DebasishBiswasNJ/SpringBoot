@@ -1,0 +1,5 @@
+spring.application.name=currency-conversion-service
+server.port=8765
+
+# Will configure the URL of Eureka here 
+eureka.client.service-url.default-zone=http://localhost:8761/eureka

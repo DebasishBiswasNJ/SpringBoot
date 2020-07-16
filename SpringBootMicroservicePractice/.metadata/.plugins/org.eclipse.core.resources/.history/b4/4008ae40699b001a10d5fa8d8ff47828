@@ -1,0 +1,7 @@
+package com.deb.microservices.netflixzuulapigatewayserver;
+
+import com.netflix.zuul.ZuulFilter;
+
+public class ZuulLoggingFilter extends ZuulFilter {
+
+}

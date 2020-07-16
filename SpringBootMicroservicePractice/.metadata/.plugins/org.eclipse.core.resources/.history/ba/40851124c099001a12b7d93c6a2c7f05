@@ -1,0 +1,9 @@
+package com.deb.microservices.currencyexchangeservice;
+
+public class ExchangeValue {
+
+	private String from;
+	private String to;
+	
+	
+}

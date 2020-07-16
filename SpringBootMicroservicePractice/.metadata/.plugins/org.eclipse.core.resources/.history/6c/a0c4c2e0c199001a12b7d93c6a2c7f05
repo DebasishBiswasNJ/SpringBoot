@@ -1,0 +1,19 @@
+package com.deb.microservices.currencyexchangeservice;
+
+import java.math.BigDecimal;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CurrencyExchangeController {
+
+	//http://localhost:8000/currency-exchange/from/USD/to/INR
+	@GetMapping("/currency-exchange/from/{from}/to/{to}")
+	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
+		
+		
+		 new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65));
+	}
+}

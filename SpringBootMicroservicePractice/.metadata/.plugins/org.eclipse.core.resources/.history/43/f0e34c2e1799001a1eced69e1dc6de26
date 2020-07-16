@@ -1,0 +1,61 @@
+# Read Me First
+The following was discovered as part of building this project:
+
+* The original package name 'com.deb.microservices.spring-cloud-config-server' is invalid and this project uses 'com.deb.microservices.springcloudconfigserver' instead.
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html/#build-image)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/htmlsingle/#using-boot-devtools)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Centralized Configuration](https://spring.io/guides/gs/centralized-configuration/)
+
+#Dependencies added at the time of creating project --> DevTools, Config Server, 2.3.0 Springboot version
+---------------------------------------------------------------------------------------------
+
+# Steps for Git SetUp
+---------------------------
+
+#steps
+=========
+1) Install git
+2) create one folder e.g- mkdir git-localconfig-repo
+3) Rightclick on eclips project -> build path -> configure build path ->java build path -> source -> link source -> browse the 	above folder -> ok
+4) create limits-service.properties [[same as application name of limits-service which is written in the application.properties file, spring.application.name=limits-service]] file in git-localconfig-repo folder in eclipse project
+5) copy lines from limits-service projects application.properties file and add it here
+6) open cmd/ git bash
+
+#GIT commit
+===================
+7) go to the specific folder [git-localconfig-repo]
+8) git init
+9) git config user.name "sreeparna"
+10) git config user.email "sree.7210@gmail.com"
+11) git add *
+12) git commit -m "some init msg"
+# Enabling Server
+======================
+13) Right click on the git-localconfig-repo link folder --> properties -- > copy the path of the repo
+14) go to the application.properties of spring-cloud-config-server and add below :
+spring.cloud.config.server.git.uri=file://C:/Users/ARIES_PC/GitConfigMicroservice/git-localconfig-repo
+
+NOTE :: make sure to add file:// before the directory path
+
+15) Go to the SpringCloudConfigServerApplication class of spring-cloud-config-server and add @EnableConfigServer annotation to enable the server.
+16) start server. 
+17) hit this url : http://localhost:8888/limits-service/default
+
+
+
+
+
+
+

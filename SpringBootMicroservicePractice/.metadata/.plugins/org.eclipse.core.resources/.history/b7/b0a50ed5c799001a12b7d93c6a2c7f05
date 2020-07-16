@@ -1,0 +1,1 @@
+Insert into EXCHANGE_VALUE_TABLE(id, from, to, conversion_multiple) values

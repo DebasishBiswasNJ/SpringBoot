@@ -1,0 +1,6 @@
+spring.application.name=spring-cloud-config-server
+server.port=8888
+
+# git repo path for limits-service.properties
+# This is the git repo from where spring cloud will read the config properties files
+spring.cloud.config.server.git.uri=file://C:/Users/ARIES_PC/GitConfigMicroservice/git-localconfig-repo

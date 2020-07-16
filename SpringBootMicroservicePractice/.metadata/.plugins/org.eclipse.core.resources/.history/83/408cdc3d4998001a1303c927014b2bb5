@@ -1,0 +1,8 @@
+package com.deb.microservices.limitsservice;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties
+public class Configuration {
+
+}
